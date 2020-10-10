@@ -58,32 +58,52 @@ where the log-likelhood function \[\ell(\theta) = \sum_{i=1}^m \left\{-\log (1+\
 
 \item (10 points) Write the pseudo-code for performing the {\bf stochastic gradient descent} algorithm to solve the training of logistic regression problem (\ref{eqn}). Please explain the difference between gradient descent and stochastic gradient descent for training logistic regression.
 \begin{tcolorbox}
-\textbf{Solution:} We may adjust the learning rate $\gamma$ base on the rate of convergence. \\
+\textbf{Solution:} We may tune the learning rate $\gamma^0$ base on the rate of convergence. \\
 \begin{algorithm}[H]
 \SetKwRepeat{Do}{do}{while}
  \KwData{$(x^i, y^i)$ for $i = 1, ..., m.$}
  \KwResult{${\theta^*}$}
- Initialization: $\theta^0, \gamma^0, \epsilon, T, K$\;
- Randomly split the indices of our data points into $N$ subsets $S_k$, $k = 1, 2, ..., K$  \;
+ Initialization: $\theta^0, \gamma^0, \epsilon, K$\;
+ Randomly split the indices of our data points into subsets $S_k$, $k = 1, 2, ..., K$  \;
  
  
- \Do
- {   
-  $\| \sum_{i=1}^m  \left\{ \frac{x^i\exp\{-\theta x^i\}} {1+\exp\{-\theta x^i\}} + (y^i-1)x^i \| > \epsilon\right\} $}
- 
-  
+ \Do{ $\| \sum_{i=1}^m  \left\{ \frac{x^i\exp\{-\theta x^i\}} {1+\exp\{-\theta x^i\}} + (y^i-1)x^i \right\} \| > \epsilon$}
   {
       \For{$k = 1, 2, ..., K$}
-      {$\theta^{t+1} \leftarrow  \theta^t + \gamma \sum_{i=1}^m  \left\{ \frac{x^i\exp\{-\theta x^i\}} {1+\exp\{-\theta x^i\}} + (y^i-1)x^i\right\}$\;}
- }
+          {
+                $\theta^{t+1} \leftarrow  \theta^t + \gamma^t \sum_{i \in S_k}  \left\{ \frac{x^i\exp\{-\theta x^i\}} {1+\exp\{-\theta x^i\}} + (y^i-1)x^i\right\}$\;
+                $\gamma^{t+1} \leftarrow \frac{\gamma^0}{t+1}$          
+          }
+  }
  
  \caption{Stochastic Gradient Descent}
 \end{algorithm}
+\break
+Comparing GD(Gradient Descent) and SGD(Stochastic Gradient Descent):
+\begin{itemize}
+\item Way of Convergence: GD increases the likelihood function value at each iteration as long as we choose a suitable learning rate,  while SGD may not increase the likelihood function value at each step but will decrease it in an oscillating fashion.
+\item Speed of Convergence: For a large dataset, GD converges very slowly since it utilize all the data for one single update of $\theta$, while SGD can converge much faster as it only utilize a small subset of the data for each update of $\theta$.
+\item Conclusion: If the data set is small, I prefer GD as the computation can still be fast and it increase the likelihood  at each step. If the data set is large, I prefer SGD for a faster rate of convergence.
+\end{itemize}
 \end{tcolorbox}
 
 \item (10 points) We will {\bf show that the training problem in basic logistic regression problem is concave.} Derive the Hessian matrix of $\ell(\theta)$ and based on this, show the training problem (\ref{eqn}) is concave (note that in this case, since we only have one feature, the Hessian matrix is just a scalar). Explain why the problem can be solved efficiently and gradient descent will achieve a unique global optimizer, as we discussed in class. 
 \begin{tcolorbox}
-\textbf{Solution:}
+\textbf{Solution:} From part (a), we have
+\begin{align*}
+ \ell'(\theta)  &= \sum_{i=1}^m  \left\{ \frac{x^i\exp\{-\theta x^i\}} {1+\exp\{-\theta x^i\}} + (y^i-1)x^i\right\}.\\
+\end{align*}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+So
+\begin{align*}
+ \ell''(\theta)  &= \sum_{i=1}^m \frac{d}{d\theta}  \left\{ \frac{x^i\exp\{-\theta x^i\}} {1+\exp\{-\theta x^i\}} + (y^i-1)x^i\right\}\\
+ &= \sum_{i=1}^m \frac{d}{d\theta} \frac{-x^i} {1+\exp\{-\theta x^i\}} \\
+ &=  \sum_{i=1}^m  \frac{-(x^i)^2} {(1+\exp\{-\theta x^i\})^2} \\
+ &<0.
+\end{align*}
+Therefore, $\ell(\theta)$ is a concave function and has a unique global maximum point.
 \end{tcolorbox}
 
 \end{enumerate}
