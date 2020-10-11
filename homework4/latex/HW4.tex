@@ -16,8 +16,7 @@
 \title{ISYE 6740 Homework 4\\ 
 \small Total 100 points + 15 bonus points. }
 \author{Shasha Liao}
-%\date{Deadline: Feb. 13, Sat., 11:55pm}
-\date{}
+\date{Deadline: Oct. 14, Wed., 11:59pm}
 \maketitle
 
 %----------------------------------------------------------------------------------
@@ -212,6 +211,26 @@ $x^{(i)} = [x_1^{(i)}, x_2^{(i)}, \ldots, x_d^{(i)}]^T$, $i = 1, \ldots, m$ and 
 
 \begin{enumerate}
 \item (5 points) Calculate class prior $\mathbb P(y = 0)$ and $\mathbb P(y = 1)$ from the training data, where $y = 0$ corresponds to spam messages, and $y = 1$ corresponds to non-spam messages. Note that these class prior essentially corresponds to the frequency of each class in the training sample. Write down the feature vectors for each spam and non-spam messages.
+\begin{tcolorbox}
+\textbf{Solution:} $\mathbb P(y = 0) = \frac 3 7$ and $\mathbb P(y = 1) = \frac 4 7$.
+\begin{center}
+	\begin{tabular}{| c | c | c |}%??c?????????????(center)
+	\hline
+& Messages & Feature vectors \\
+\hline
+& million dollar offer & [0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0] \\
+Spam & secret offer today & [1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0] \\
+& secret is secret & [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0] \\
+\hline
+& low price for valued customer & [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0] \\
+Non-spam & play secret sports today & [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0] \\
+& sports is healthy & [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0] \\
+& low price pizza & [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] \\
+ \hline
+        \end{tabular}
+        \end{center}
+\end{tcolorbox}
+
 \item (5 points) In the Naive Bayes model, assuming the keywords are independent of each other (this is a simplification), the likelihood of a sentence with its feature vector $x$ given a class $c$ is given by 
 \[
 \mathbb P (x|y = c) = \prod_{k=1}^d \theta_{c, k}^{x_k}, \quad c = \{0, 1\}
@@ -226,8 +245,14 @@ where $0 \leq \theta_{c,k} \leq 1$ is the probability of word $k$ appearing in c
  Calculate the maximum likelihood estimates of $\theta_{0,1}$, $\theta_{0,7}$, $\theta_{1,1}$, $\theta_{1,15}$ by maximizing the log-likelihood function above.
  %$\mathbb P (x|y = c)$ with respect to $\theta_{c, k}$ and given data. 
  (Hint: We are solving a constrained maximization problem: you can introduce Lagrangian multipliers, or directly substitute the $\theta_{0,k} = 1- \theta_{1, k}$ into the objective function so you do not need to worry about the constraint.)
-\item (5 points) Given a test message ``\textsf{today is secret}'', using the Naive Bayes classier that you have trained in Part (a)-(b), to calculate the posterior and decide whether it is spam or not spam.
+\begin{tcolorbox}
+\textbf{Solution:}
+\end{tcolorbox}
 
+\item (5 points) Given a test message ``\textsf{today is secret}'', using the Naive Bayes classier that you have trained in Part (a)-(b), to calculate the posterior and decide whether it is spam or not spam.
+\begin{tcolorbox}
+\textbf{Solution:}
+\end{tcolorbox}
 \end{enumerate}
 
 
