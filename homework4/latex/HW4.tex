@@ -246,15 +246,60 @@ where $0 \leq \theta_{c,k} \leq 1$ is the probability of word $k$ appearing in c
  %$\mathbb P (x|y = c)$ with respect to $\theta_{c, k}$ and given data. 
  (Hint: We are solving a constrained maximization problem: you can introduce Lagrangian multipliers, or directly substitute the $\theta_{0,k} = 1- \theta_{1, k}$ into the objective function so you do not need to worry about the constraint.)
 \begin{tcolorbox}
-\textbf{Solution:}
+\textbf{Solution:}\\
+$ i =  1  : x^{(1)}_{2} = 1, x^{(1)}_{8} = 1, x^{(1)}_{9} = 1, $\\
+
+$ i =  2  : x^{(2)}_{1} = 1, x^{(2)}_{2} = 1, x^{(2)}_{7} = 1, $\\
+
+$ i =  3  : x^{(3)}_{1} = 2, x^{(3)}_{11} = 1, $\\
+
+$ i =  4  : x^{(4)}_{3} = 1, x^{(4)}_{4} = 1, x^{(4)}_{5} = 1, x^{(4)}_{6} = 1, x^{(4)}_{12} = 1, $\\
+
+$ i =  5  : x^{(5)}_{1} = 1, x^{(5)}_{7} = 1, x^{(5)}_{10} = 1, x^{(5)}_{13} = 1, $\\
+
+$ i =  6  : x^{(6)}_{10} = 1, x^{(6)}_{11} = 1, x^{(6)}_{14} = 1, $\\
+
+$ i =  7  : x^{(7)}_{3} = 1, x^{(7)}_{4} = 1, x^{(7)}_{15} = 1, $\\
+
+\begin{align*}
+\ell(\theta_{0,1}, \ldots, \theta_{0, d}, \theta_{1,1}, \ldots, \theta_{1, d}) & = \sum_{i=1}^m \sum_{k=1}^d x_k^{(i)} \log \theta_{y^{(i)}, k} \\
+& = \sum_{k=1}^d ( \sum_{i=1}^3 x_k^{(i)} \log \theta_{0,k} + \sum_{i= 4}^7 x_{k}^{(i)} \log (1-\theta_{0,k}) ).\\
+\end{align*}
+From the equation above we see that maximizing $\ell$ is equivalent to maximizing $\sum_{i=1}^3 x_k^{(i)} \log \theta_{0,k} + \sum_{i= 4}^7 x_{k}^{(i)} \log (1-\theta_{0,k})$ for each $k$ separably, which can be reduced to solving the following optimization problem 
+$$\max_{\theta \in [0,1]} a \log \theta + b \log (1- \theta), \quad a \geq 0, b\geq 0$$
+where we define $\log 0 = -\infty$.
+Denote $$f(\theta) = a \log \theta + b \log (1- \theta),$$ then $$ f'(\theta) = \frac a \theta - \frac b {1-\theta} = \frac{a - (a+b)\theta}{\theta(1-\theta)}. $$ To find the maximizer $\theta^*$, we just need to solve $f'(\theta^*) = 0$, we obtain $$\theta^* = \frac{a}{a+b}.$$
+Therefore, for each $k$, we have $\theta_{0,k}^* = \frac{\sum_{i=1}^3 x^{(i)}_k}{\sum_{i=1}^7 x^{(i)}_k}$. So, 
+\begin{align*}
+\theta_{0,1}^* &= \frac 3 4,\\
+\theta_{0,7}^* &= \frac 1 2,\\
+\theta_{1,1}^* &= 1-  \theta_{0,1}^*  = 1- \frac 3 4 = \frac 1 4,\\
+\theta_{1,15}^* &= 1-  \theta_{0,15}^*  = 1 -  0 = 1.\\
+\end{align*}
 \end{tcolorbox}
 
 \item (5 points) Given a test message ``\textsf{today is secret}'', using the Naive Bayes classier that you have trained in Part (a)-(b), to calculate the posterior and decide whether it is spam or not spam.
 \begin{tcolorbox}
-\textbf{Solution:}
+\textbf{Solution:}\\
+The vector for ``\textsf{today is secret}'' is $x$ with $x_1= 1, x_7=1,x_{11}= 1$ and all other components zero. 
+Recall that $ \theta_{0,1}^* = \frac 3 4, \theta_{0,7}^* = \frac 1 2, \theta^*_{0,11} = \frac 1 2. $
+\begin{itemize}
+\item Evaluate the likelihoods:\\
+$$\mathbb P(x|y=0) = \Pi _{k=1}^d (\theta^*_{0,k})^{x_k} = \theta^*_{0,1} \theta^*_{0,7} \theta^*_{0,11} = \frac 3 {16}.$$
+$$\mathbb P(x|y=1) = \Pi _{k=1}^d (\theta^*_{1,k})^{x_k} = \theta^*_{1,1} \theta^*_{1,7} \theta^*_{1,11} = \frac 1 {16}.$$
+\item Evaluate the prior probability: \\
+$$\mathbb P(y = 0) = \frac 3 7.$$ $$\mathbb P(y = 1) = \frac 4 7.$$
+\item Evaluate the posterior by Bayes Formula: \\
+
+\begin{align*}
+\mathbb P (y = 0 | x) &= \frac{\mathbb P (x| y = 0) \mathbb P(y=0)}{ \mathbb P (x| y = 0) \mathbb P(y=0) + \mathbb P (x| y = 1) \mathbb P(y=1) }\\
+&= \frac{\frac{3}{16} \cdot \frac{3}{7}}{ \frac{3}{16} \cdot \frac{3}{7} + \frac{1}{16} \cdot \frac{4}{7} } \\
+&= \frac{9}{13} > \frac 1 2.
+\end{align*}
+\end{itemize}
+Since $\mathbb P (y = 0 | x) > \frac 1 2$, we classify the message ``\textsf{today is secret}'' as spam.
 \end{tcolorbox}
 \end{enumerate}
-
 
 \end{enumerate}
 
