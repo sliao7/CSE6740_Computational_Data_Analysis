@@ -10,9 +10,7 @@
 * Ran the ISOMAP algorithm on a dataset containing 698 images, corresponding to different poses of the same face.
 * Visualized the result and compared it with the result from PCA.
 ![alt text][isomap_faces]
-### 3. 
-*
-*
+
 [isomap_faces]: https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework2/Latex/isomap_face_scatter.png 
 
 ## References
