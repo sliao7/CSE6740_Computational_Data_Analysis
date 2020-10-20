@@ -1,4 +1,4 @@
-## homework 1 [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework1/Shasha_Liao_HW1_report.pdf)
+## homework 1: Clustering [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework1/Shasha_Liao_HW1_report.pdf)
 ### 1. Clustering
 * Proved the formula for calculating the centroids in K-means Algorithm for different similarity functions.
 * Proved (using mathematical arguments) that K-means algorithm converges to a local optimum in finite steps.
