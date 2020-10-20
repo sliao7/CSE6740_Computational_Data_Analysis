@@ -9,7 +9,7 @@
 
 ### 3. Political blogs and spectral clustering [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework1/python/spectral_clustering.py)
 * Implemented spectral clustering algorithm to study a [dataset](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/tree/main/homework1/data) of 1490 political blogs. [[1]](#1) 
-* Fine tuned k and achieved an overall matchrate = 95.27%. 
+* Fine tuned k and achieved an overall matchrate 95.27%. 
 
 
 ## References
