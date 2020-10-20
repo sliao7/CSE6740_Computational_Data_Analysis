@@ -1,4 +1,4 @@
-## homework 2 [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework2/Shasha_Liao_HW2_report.pdf) 
+## homework 2: Dimension Reduction [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework2/Shasha_Liao_HW2_report.pdf) 
 ### 1. Linear Dimension Reduction: PCA on food consumption in European countries [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework2/python/food_PCA.py)
 * Studied the food consumption of 16 countries in Europe for 20 food items, such as tea, jam, and other.
 * Derived and soved the mathematical optimization problem for finding top k principal components.
