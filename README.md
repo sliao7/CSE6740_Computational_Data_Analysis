@@ -13,7 +13,4 @@ Includes all the homework problems and projects
 
 ## [homework 3](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/tree/main/homework3): Density Estimation [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework3/Shasha_Liao_HW3_report.pdf) 
 ### 1. Kernel Density Estimation on psychological experiments [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework3/python/density_estimation.py)
-* Studied whether or not the two brain regions are likely to be independent of each other on a psychological experiment dataset.
-* Applied 1D and 2D kernel density estimations and visualized the results.
-* Conlusion: people with less extreme political views have their two regions functions more independently than those with extreme political views.
 ### 2. EM algorithm for MNIST dataset [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework3/python/EM_scipy.py)
