@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings("ignore")
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
@@ -11,7 +13,7 @@ from kmeans import kmeans
 
 def import_edges():
 	# read the edges from 'edges.txt'
-	f_path = abspath('data/edges.txt')
+	f_path = abspath('../data/edges.txt')
 	if exists(f_path):
 		with open(f_path) as graph_file:
 			lines = [line.split() for line in graph_file]
@@ -19,7 +21,7 @@ def import_edges():
 
 def import_labels():
 	# read the labels from 'nodes.txt'
-	f_path = abspath('data/nodes.txt')
+	f_path = abspath('../data/nodes.txt')
 	labels = []
 	if exists(f_path):
 		with open(f_path) as fid:
@@ -59,9 +61,7 @@ def main():
 	D = np.diag(1/np.sqrt(np.sum(A, axis = 1)).A1)
 	L = D @ A @ D
 
-
-
-
+	# eigen decomposition
 	v,eigv = np.linalg.eig(L)
 
 	overall_mismatch_rates = []
@@ -101,14 +101,10 @@ def main():
 			# mismatch_rates.append(mismatch)
 			# cluster_weights.append(cluster_size/n)
 			overall_mismatch_rate += mismatch * cluster_size/n
-			print(new_k)
+			
 
 		overall_mismatch_rates.append(overall_mismatch_rate)
-		# print('k = ', k)
-		# print('major_labels:\n', major_labels)
-		# print('mismatch_rates:\n', mismatch_rates)
-		# print('cluster_weights:\n', cluster_weights)
-		# print('overall_mismatch_rate:\n', overall_mismatch_rate)
+	print('overall_mismatch_rate:\n', min(overall_mismatch_rates))
 
 	ks = [i for i in range(2,201)]
 	plt.plot(ks, overall_mismatch_rates)
