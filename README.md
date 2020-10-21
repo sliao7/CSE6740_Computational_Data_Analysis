@@ -16,5 +16,6 @@ Includes all the homework problems and projects
 #### 2. EM algorithm for MNIST dataset [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework3/python/EM_scipy.py)
 
 ## [homework 4](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/tree/main/homework4): Classification [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework4/Liao_Shasha_HW4_report.pdf)
-#### 1. 
-#### 2.
+#### 1. Basic Optimization and Logistic Regression
+#### 2. Classification [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework4/python/classifier.py)
+#### 3. Naive Bayes for spam filtering
