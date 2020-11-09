@@ -19,3 +19,9 @@ Includes all the homework problems and projects
 #### 1. Basic Optimization and Logistic Regression
 #### 2. Classification [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework4/python/classifier.py)
 #### 3. Naive Bayes for spam filtering
+
+## [homework 5](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/tree/main/homework5): Support Vector Machine and Neural Network [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework5/Liao_Shasha_HW5_report.pdf)
+
+#### 1. Analysis on Support Vector Machine
+#### 2. Multi-class classification with KNN, Logistic Regression, SVM, kernel SVM, and Neural Network [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework5/Python/classification_mnist.py) [ notebook ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework5/Python/classification_mnist.ipynb)
+#### 3. Simple Neural Networks Analysis
