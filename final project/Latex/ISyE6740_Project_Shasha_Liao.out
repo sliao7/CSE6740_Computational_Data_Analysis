@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section.1}{Problem Statement}{}% 1
+\BOOKMARK [1][-]{section.2}{Methodology}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Exploratory Data Analysis \(EDA\)}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Baseline model}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Outliers}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{High-leverage points}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Nonlinearity}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{Collinearity}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.7}{Heteroscedasticity}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Evaluation and Final Results}{}% 10
