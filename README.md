@@ -25,3 +25,9 @@ Includes all the homework problems and projects
 #### 1. Analysis on Support Vector Machine
 #### 2. Multi-class classification with KNN, Logistic Regression, SVM, kernel SVM, and Neural Network [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework5/Python/classification_mnist.py) [ notebook ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework5/Python/classification_mnist.ipynb)
 #### 3. Simple Neural Networks Analysis
+
+## [homework 6](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/tree/main/homework6): AdaBoost and Decision Tree [ report ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework6/Liao_Shasha_HW6_report.pdf)
+
+#### 1. AdaBoost with decision stumps as weak learners by hand
+#### 2. Linear Regression Analysis: bias-variance tradeoff, Cross-Validation, and Feature Selection
+#### 3. Random Forest and One-class SVM for email spam classifier [ code ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework6/Python/email_spam_classifier.py) [ notebook ](https://github.com/sliao7/CSE6740_Computational_Data_Analysis/blob/main/homework6/Python/Email_Spam_Classifier.ipynb)
